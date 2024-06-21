@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <h3>I'm interested in taking part in future studies:</h3>
+            <hr>
+            <form id='surveyForm' action="{% url 'save' %}" method="POST">
+                <label for="age" class="control-label">Age in years:</label>
+                <select id="age" name="age" class="form-select">
+                    <option value="" selected></option>
+                    <option value="&lt;20&gt;">&lt;20</option>
+                    <option value="20-30">20 - 30</option>
+                    <option value="30-40">30 - 40</option>
+                    <option value="40-50">40 - 50</option>
+                    <option value="&gt;50">&gt;50</option>
+                    <option value="NONE">do not want to disclose</option>
+                </select>
+                <br>
+                <label for="gender" class="control-label">I identify as:</label>
+                <select id="gender" name="gender" class="form-select">
+                    <option value="" selected></option>
+                    <option value="female">female</option>
+                    <option value="male">male</option>
+                    <option value="other">non-binary</option>
+                    <option value="NONE">do not want to disclose</option>
+                </select>
+                <br>
+                <label for="country" class="form-label">What country do you live in?</label>
+                <input type="text" class="form-control" id="country" name="country" placeholder="">
+                <br>
+                <label for="education" class="form-label">Your highest level of education?</label>
+                <input type="text" class="form-control" id="education" name="education" placeholder="">
+                <br>
+                <label for="occupation" class="form-label">What is your current occupation?</label>
+                <input type="text" class="form-control" id="occupation" name="occupation" placeholder="">
+                <br>
+                <label for="csp" class="form-label">
+                    Do you have any experience in deploying or maintaining Web security mechanisms? If yes, which?
+                </label>
+                <input type="text" class="form-control" id="csp" name="csp" placeholder="">
+                <br>
+                <label for="security" class="form-label">
+                    Do you have any security background? If yes, which?
+                </label>
+                <input type="text" class="form-control" id="security" name="security" placeholder="">
+                <br>
+                <label for="companySize" class="control-label">How big is the company that you are working for?</label>
+                <select id="companySize" name="companySize" class="form-select">
+                    <option value="" selected></option>
+                    <option value="kleinst">&lt;9</option>
+                    <option value="klein">10 - 49</option>
+                    <option value="mittel">50 - 249</option>
+                    <option value="gross">&gt;=250</option>
+                    <option value="NONE">do not want to disclose</option>
+                </select>
+                <br>
+                <label for="companyWeb" class="form-label">
+                    Is the Web presence of your company essential for its main business?
+                </label>
+                <input type="text" class="form-control" id="companyWeb" name="companyWeb" placeholder="">
+                <br>
+                <label for="companyDevTeams" class="form-label">
+                    How many development teams are working on your Web presence.
+                </label>
+                <input type="text" class="form-control" id="companyDevTeams" name="companyDevTeams" placeholder="">
+                <br>
+                <hr>
+                <br>
+                <p><b>We only require an email addresses to be able to contact you in case you are selected for a
+                    study</b></p>
+                <label for="email" class="form-label">Contact Email Address;</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="" required>
+                <br>
+                <label for="feedback" class="form-label">
+                    Did you experience any issues while completing this survey?
+                    Or do you have any other remarks or feedback for us?
+                </label>
+                <input type="text" class="form-control" id="feedback" name="feedback" placeholder="">
+                {% csrf_token %}
+                <input type="hidden" id="uuid" name="uuid" value="{{ uid }}">
+            </form>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-11"></div>
+            <div class="col-1">
+                <button id="surveyBtn" class="btn btn-primary float-end">Save!</button>
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/survey.js' %}"></script>
+{% endblock %}

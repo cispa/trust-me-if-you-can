@@ -1,0 +1,33 @@
+html {
+    font-size: 150%;
+}
+
+body {
+    background-image: url("/static/img/background.jpg");
+    background-repeat: space;
+    background-size: cover;
+    background-color: #cccccc;
+}
+
+.content {
+    min-height: calc(100vh - 150px);
+    padding-bottom: 10em;
+    padding-top: 5em;
+}
+
+.container {
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    padding: 2em;
+}
+
+.btn {
+    width: fit-content!important;
+}
+
+.footer {
+    height: 150px;
+}

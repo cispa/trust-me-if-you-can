@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light static-top mb-5 shadow">
+    <div class="container">
+        <a class="navbar-brand" href="/logout">&#11013; Logout</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Notes
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/mensa">Mensa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-3">
+            <div class="card border-0 shadow">
+                <div class="card-body p-5">
+                    <h1 class="font-weight-light">My Notes:</h1>
+                    <br>
+                    {% if notes %}
+                    {% for n in notes %}
+                    <div class="row">
+                        <div class="card" style="width: 100%;">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ n.head }}</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Created {{ n.created }} by
+                                    {{n.user.username}}</h6>
+                                <pre class="card-text">{{ n.content }}</pre>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    {% endfor %}
+                    {% else %}
+                    <pre class="card-text">No Notes yet.</pre>
+                    <br>
+                    {% endif %}
+                    <div id="picImg" class="add-btn">
+                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#modal"
+                                style="float: right;">
+                            <img src="/static/img/addIcon.png" alt="" width="75px">
+                        </button>
+                    </div>
+                </div>
+                <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal"
+                     aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">New Note:</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/create" method="POST" onsubmit="submitAsJson(event);">
+                                    <div class="form-group">
+                                        <label for="head">Headline:</label>
+                                        <input type="text" class="form-control" id="head" name="head">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="content">Note:</label>
+                                        <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+                                        </button>
+                                        <button type="submit" class="btn btn-primary">Save Note</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-3">
+            <div id="fb-root"></div>
+            <script async defer crossorigin="anonymous" src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v14.0"></script>
+            <div class="fb-page" data-href="https://www.facebook.com/AssociationForComputingMachinery/" 
+                 data-tabs="timeline" data-width="" data-height="" data-small-header="false" 
+                 data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                <blockquote cite="https://www.facebook.com/AssociationForComputingMachinery/" class="fb-xfbml-parse-ignore">
+                   <a href="https://www.facebook.com/AssociationForComputingMachinery/">
+                       ACM - Association for Computing Machinery
+                   </a>
+                </blockquote>
+            </div>
+        </div>
+        <div class="col-1"></div>
+        <div class="col-3">
+            <a class="twitter-timeline" data-height="500" href="https://twitter.com/acm_ccs?ref_src=twsrc%5Etfw">
+                Tweets by ACM CCS
+            </a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
