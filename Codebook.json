@@ -1,0 +1,67 @@
+{
+    "Background":[
+       "Working in IT Security",
+       "Working in DevOps",
+       "Working as WebDev",
+       "Hobby-Web-Developer",
+       "Security Education",
+       "Server-Side-XSS Knowledge",
+       "Client-Side XSS Knowledge",
+       "Not know client vs. server-side",
+       "XSS-Defense Sanitization/Filtering",
+       "XSS-Defense CSP",
+       "XSS-Defense WAF",
+       "Not known TT before",
+       "Not understood Default Policy",
+       "Understands Default Policy",
+       "Usually no plain JS",
+    ],
+    "Information Source":[
+       "Only Superficial Information",
+       "Focused on named Policies",
+       "Insufficient Examples"
+    ],
+    "Perceptions":[
+       "Initial Policy Insecure",
+       "XSS is fixed in Frameworks",
+       "Manual Sanitizer are bypassable",
+       "XSS Mitigation needs to be done on Server-Side",
+       "New XSS type -> New Sanitizer",
+       "TT complements CSP",
+       "TT is as complicated as CSP",
+       "Dyn. added script have changing URLs",
+       "createScript has no proper solution"
+    ],
+    "Roadblocks":[
+       "CSP Setup",
+       "Not universally Supported",
+       "Named Policies do not Work",
+       "TT needs HTTPS",
+       "Understanding of the sanitizers",
+       "Engineering Effort",
+       "Developer Education",
+       "Same-Origin Iframe",
+       "3rd-Party behavior"
+    ],
+    "Strategies":[
+       "3rd-Party Sanitizer",
+       "Debug with Browser Console",
+       "Setting a CSP",
+       "Same Sanitizer 4 All",
+       "Use Regular Expressions",
+       "Use Stacktrace-based allowlist",
+       "Move features to Iframes",
+       "URL allowlist",
+       "Use default as fallback",
+       "Only Eval signed-Code",
+       "AST based Allow-list"
+    ],
+    "Improvement":[
+       "Framework support",
+       "Information / Documentation",
+       "Handle Iframes differently",
+       "Allow scripts based in Initializer",
+       "Change Sanitizer Invocations",
+       "Standardized Sanitizer"
+    ]
+ }

@@ -8,9 +8,9 @@ import os
 
 @require_GET
 def get_random_ad(request):
-    if request.META.get('HTTP_HOST', '').startswith'ads.'):
+    if request.META.get('HTTP_HOST', '').startswith('ads.'):
         ad = random.choice(os.listdir(os.path.join(settings.BASE_DIR, 'advertisements/ads')))
-        return HttpResponseRedirect(f'https://{ad.replace(".js", "")}-{request.META.get("HTTP_HOST", "")}/')
+        return HttpResponseRedirect(f'http://{ad.replace(".js", "")}-{request.META.get("HTTP_HOST", "")}/')
     return HttpResponse(status=404)
 
 

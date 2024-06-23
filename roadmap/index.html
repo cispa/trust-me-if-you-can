@@ -1,0 +1,1682 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Trusted Types Roadmap from 'Trust Me If You Can – How Usable Is Trusted Types In Practice?' - USENIX 2024">
+    <meta name="author" content="Sebastian Roth, Lea Gröber, Philip Baus, Katharina Krombholz, and Ben Stock">
+    <title>Trusted Types Roadmap</title>
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <script src="bootstrap.min.js"></script>
+    <script src="main.js"></script>
+    <style>
+        .modal-dialog {
+            max-width: 85%!important;
+        }
+    </style>
+</head>
+
+<body>
+    <center style="max-width: 80%; margin: auto;">
+        <h1 style="margin-top: 1.5em;">Trusted Types Roadmap</h1>
+        <b>Disclaimer:</b> Deploying Trusted Types is a non trivial task that will not always work for each Web application. Also, depending on the application it is not possible to deploy a non bypassable policy in all cases. This roadmap is only a helper for Web developers that want to deploy Trusted Types.<br><br>
+    </center>
+    <div class="mxgraph">
+        <svg
+            style="left: 0px; top: 0px; height: 100%; display: block; margin: auto; min-width: 535px; min-height: 1475px; background-image: none; background-color: transparent;">
+            <defs>
+                <filter id="dropShadow">
+                    <feGaussianBlur in="SourceAlpha" stdDeviation="1.7" result="blur"></feGaussianBlur>
+                    <feOffset in="blur" dx="3" dy="3" result="offsetBlur"></feOffset>
+                    <feFlood flood-color="#3D4574" flood-opacity="0.4" result="offsetColor"></feFlood>
+                    <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"></feComposite>
+                    <feBlend in="SourceGraphic" in2="offsetBlur"></feBlend>
+                </filter>
+            </defs>
+            <g transformOrigin="0 0" transform="scale(1,1)translate(-222,-12)">
+                <g></g>
+                <g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="230" y="20" width="510" height="670" fill="#ffe6cc" stroke="#d79b00"
+                            pointer-events="all"></rect>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="230" y="690" width="510" height="270" fill="#d5e8d4" stroke="#82b366"
+                            pointer-events="all"></rect>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="230" y="960" width="510" height="270" fill="#dae8fc" stroke="#6c8ebf"
+                            pointer-events="all"></rect>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="230" y="1230" width="510" height="220" fill="#f8cecc" stroke="#b85450"
+                            pointer-events="all"></rect>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 485 120 L 485 255.63" fill="none" stroke="white" stroke-miterlimit="10"
+                            pointer-events="stroke" visibility="hidden" stroke-width="9"></path>
+                        <path d="M 485 120 L 485 255.63" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                            pointer-events="stroke"></path>
+                        <path d="M 485 260.88 L 481.5 253.88 L 485 255.63 L 488.5 253.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 186px; margin-left: 487px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            Yes</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="420" y="40" width="130" height="80" rx="12" ry="12" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 80px; margin-left: 421px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Is your Website using third parties (e.g., advertisements, analytics,
+                                            etc)?</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 318 230 L 318 250 L 318 242 L 318 255.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 318 230 L 318 250 L 318 242 L 318 255.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 318 260.88 L 314.5 253.88 L 318 255.63 L 321.5 253.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 242px; margin-left: 318px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            No</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="253" y="150" width="130" height="80" rx="12" ry="12" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 190px; margin-left: 254px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Should all dangerous sinks be automatically protected by Trusted Types?
+                                        </div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 485 342 L 485 362 L 485 354 L 485 367.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 485 342 L 485 362 L 485 354 L 485 367.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 485 372.88 L 481.5 365.88 L 485 367.63 L 488.5 365.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="420" y="262" width="130" height="80" rx="12" ry="12" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 302px; margin-left: 421px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Deploy a CSP that enforces a Trusted Types default policy<br></div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 420 120 L 387.95 145.99" fill="none" stroke="white" stroke-miterlimit="10"
+                            pointer-events="stroke" visibility="hidden" stroke-width="9"></path>
+                        <path d="M 420 120 L 387.95 145.99" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                            pointer-events="stroke"></path>
+                        <path d="M 383.87 149.3 L 387.1 142.17 L 387.95 145.99 L 391.51 147.61 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all">
+                        </path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 134px; margin-left: 404px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            No</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 383 230 L 415.18 257.83" fill="none" stroke="white" stroke-miterlimit="10"
+                            pointer-events="stroke" visibility="hidden" stroke-width="9"></path>
+                        <path d="M 383 230 L 415.18 257.83" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                            pointer-events="stroke"></path>
+                        <path d="M 419.15 261.27 L 411.57 259.34 L 415.18 257.83 L 416.15 254.04 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all">
+                        </path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 242px; margin-left: 397px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            Yes</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 318 342 L 318 362 L 318 354 L 318 367.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 318 342 L 318 362 L 318 354 L 318 367.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 318 372.88 L 314.5 365.88 L 318 367.63 L 321.5 365.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="253" y="262" width="130" height="80" rx="12" ry="12" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 302px; margin-left: 254px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Deploy a CSP that enforces a named Trusted Types policy</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 485 454 L 485 474 L 485 470 L 485 483.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 485 454 L 485 474 L 485 470 L 485 483.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 485 488.88 L 481.5 481.88 L 485 483.63 L 488.5 481.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="420" y="374" width="130" height="80" rx="12" ry="12" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 414px; margin-left: 421px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Create a test Trusted Types policy in JavaScript</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 383 414 L 403 414 L 400 414 L 413.63 414" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 383 414 L 403 414 L 400 414 L 413.63 414" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 418.88 414 L 411.88 417.5 L 413.63 414 L 411.88 410.5 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="253" y="374" width="130" height="80" rx="12" ry="12" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 414px; margin-left: 254px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Add explicit calls to the sanitizer to each dangerous sink you want to
+                                            protect</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 452.5 809 L 452.5 829 L 365 829 L 365 842.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 452.5 809 L 452.5 829 L 365 829 L 365 842.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 365 847.88 L 361.5 840.88 L 365 842.63 L 368.5 840.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 820px; margin-left: 452px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            No</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 517.5 809 L 517.5 829 L 615 829 L 615 842.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 517.5 809 L 517.5 829 L 615 829 L 615 842.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 615 847.88 L 611.5 840.88 L 615 842.63 L 618.5 840.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 820px; margin-left: 518px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            Yes</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="420" y="749" width="130" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 779px; margin-left: 421px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Are JavaScript tags or inline events added via HTML sinks?</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 550 520 L 583.63 520" fill="none" stroke="white" stroke-miterlimit="10"
+                            pointer-events="stroke" visibility="hidden" stroke-width="9"></path>
+                        <path d="M 550 520 L 583.63 520" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                            pointer-events="stroke"></path>
+                        <path d="M 588.88 520 L 581.88 523.5 L 583.63 520 L 581.88 516.5 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 520px; margin-left: 568px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            No</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 485 550 L 485 654.63" fill="none" stroke="white" stroke-miterlimit="10"
+                            pointer-events="stroke" visibility="hidden" stroke-width="9"></path>
+                        <path d="M 485 550 L 485 654.63" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                            pointer-events="stroke"></path>
+                        <path d="M 485 659.88 L 481.5 652.88 L 485 654.63 L 488.5 652.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 564px; margin-left: 485px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            Yes</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="420" y="490" width="130" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 520px; margin-left: 421px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Is the application still working properly?</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 655 550 L 655 570 L 655 560 L 655 573.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 655 550 L 655 570 L 655 560 L 655 573.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 655 578.88 L 651.5 571.88 L 655 573.63 L 658.5 571.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="590" y="490" width="130" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 520px; margin-left: 591px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Is the error coming from a sourceless frame?</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="590" y="580" width="130" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 610px; margin-left: 591px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Hook appending sinks to inject TT in all newly added iframes</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 485 721 L 485 741 L 485 729 L 485 742.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 485 721 L 485 741 L 485 729 L 485 742.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 485 747.88 L 481.5 740.88 L 485 742.63 L 488.5 740.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="420" y="661" width="130" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 691px; margin-left: 421px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            NEXT:<br>Start implementing the HTML sanitizer...</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 590 640 L 555.64 658.04" fill="none" stroke="white" stroke-miterlimit="10"
+                            pointer-events="stroke" visibility="hidden" stroke-width="9"></path>
+                        <path d="M 590 640 L 555.64 658.04" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                            pointer-events="stroke"></path>
+                        <path d="M 550.99 660.48 L 555.56 654.13 L 555.64 658.04 L 558.81 660.33 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all">
+                        </path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 425 879 L 452.5 879 L 452.5 922.63" fill="none" stroke="white" stroke-miterlimit="10"
+                            pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 425 879 L 452.5 879 L 452.5 922.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 452.5 927.88 L 449 920.88 L 452.5 922.63 L 456 920.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="305" y="849" width="120" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 879px; margin-left: 306px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Use the SanitizerAPI (or DOMPurify)</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 550 879 L 517.5 879 L 517.5 922.63" fill="none" stroke="white" stroke-miterlimit="10"
+                            pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 550 879 L 517.5 879 L 517.5 922.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 517.5 927.88 L 514 920.88 L 517.5 922.63 L 521 920.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="550" y="849" width="130" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 879px; margin-left: 551px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Implement a Workarround with DOMParser API that queries the JS sanitizer
+                                        </div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 485 989 L 485 1009 L 485 1000 L 485 1013.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 485 989 L 485 1009 L 485 1000 L 485 1013.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 485 1018.88 L 481.5 1011.88 L 485 1013.63 L 488.5 1011.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="420" y="929" width="130" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 959px; margin-left: 421px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            NEXT:<br>Start implementing the ScriptURL sanitizer...</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 485 1260 L 485 1280 L 318 1280 L 318 1293.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 485 1260 L 485 1280 L 318 1280 L 318 1293.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 318 1298.88 L 314.5 1291.88 L 318 1293.63 L 321.5 1291.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="420" y="1200" width="130" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 1230px; margin-left: 421px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            NEXT:<br>Start implementing the JavaScript sanitizer...</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 452.5 1080 L 452.5 1100 L 345 1100 L 345 1113.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 452.5 1080 L 452.5 1100 L 345 1100 L 345 1113.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 345 1118.88 L 341.5 1111.88 L 345 1113.63 L 348.5 1111.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1089px; margin-left: 453px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            No</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 517.5 1080 L 517.5 1100 L 615 1100 L 615 1113.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 517.5 1080 L 517.5 1100 L 615 1100 L 615 1113.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 615 1118.88 L 611.5 1111.88 L 615 1113.63 L 618.5 1111.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1090px; margin-left: 517px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            Yes</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="420" y="1020" width="130" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 1050px; margin-left: 421px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Do the dyn. added script URLs contain dynamically changing parts?</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 410 1150 L 452.5 1150 L 452.5 1193.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 410 1150 L 452.5 1150 L 452.5 1193.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 452.5 1198.88 L 449 1191.88 L 452.5 1193.63 L 456 1191.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="280" y="1120" width="130" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 1150px; margin-left: 281px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Create a allow-list of allowed script URLs that can be added.</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 550 1150 L 517.5 1150 L 517.5 1193.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 550 1150 L 517.5 1150 L 517.5 1193.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 517.5 1198.88 L 514 1191.88 L 517.5 1193.63 L 521 1191.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="550" y="1120" width="130" height="60" rx="9" ry="9" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 1150px; margin-left: 551px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Create a RegEx-based allow-list of trusted script URLs.</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="230" y="20" width="120" height="30" fill="#ffe6cc" stroke="#d79b00"
+                            pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 35px; margin-left: 231px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Initial Deployment</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="230" y="690" width="120" height="30" fill="#d5e8d4" stroke="#82b366"
+                            pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 705px; margin-left: 231px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            createHTML</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="230" y="960" width="120" height="30" fill="#dae8fc" stroke="#6c8ebf"
+                            pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 975px; margin-left: 231px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            createScriptURL</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="230" y="1230" width="120" height="30" fill="#f8cecc" stroke="#b85450"
+                            pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1245px; margin-left: 231px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            createScript</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 383 1340 L 403 1340 L 400 1340 L 413.63 1340" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 383 1340 L 403 1340 L 400 1340 L 413.63 1340" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 418.88 1340 L 411.88 1343.5 L 413.63 1340 L 411.88 1336.5 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1340px; margin-left: 401px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            No</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 318 1380 L 318 1405 L 455 1405 L 455 1423.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 318 1380 L 318 1405 L 455 1405 L 455 1423.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 455 1428.88 L 451.5 1421.88 L 455 1423.63 L 458.5 1421.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1392px; margin-left: 319px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            Yes</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="253" y="1300" width="130" height="80" rx="12" ry="12" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 1340px; margin-left: 254px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Is it possible to move the part of the application that requires
+                                            eval-like behavior into a cross-origin-iframe?</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 485 1380 L 485 1423.63" fill="none" stroke="white" stroke-miterlimit="10"
+                            pointer-events="stroke" visibility="hidden" stroke-width="9"></path>
+                        <path d="M 485 1380 L 485 1423.63" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                            pointer-events="stroke"></path>
+                        <path d="M 485 1428.88 L 481.5 1421.88 L 485 1423.63 L 488.5 1421.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1391px; margin-left: 485px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            Yes</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 550 1340 L 570 1340 L 566 1340 L 579.63 1340" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 550 1340 L 570 1340 L 566 1340 L 579.63 1340" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 584.88 1340 L 577.88 1343.5 L 579.63 1340 L 577.88 1336.5 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 550 1340 L 570 1340 L 566 1340 L 579.63 1340" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 550 1340 L 570 1340 L 566 1340 L 579.63 1340" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 584.88 1340 L 577.88 1343.5 L 579.63 1340 L 577.88 1336.5 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: hidden;"></g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 1px; height: 1px; padding-top: 1341px; margin-left: 566px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); background-color: rgb(255, 255, 255); ">
+                                        <div
+                                            style="display: inline-block; font-size: 11px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; background-color: rgb(255, 255, 255); white-space: nowrap;">
+                                            No</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="420" y="1300" width="130" height="80" rx="12" ry="12" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 1340px; margin-left: 421px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Can you create a regular expression that checks matches only the
+                                            injected JavaScript? </div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="425" y="1430" width="120" height="40" rx="6" ry="6" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 1450px; margin-left: 426px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Done</div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <path d="M 651 1380 L 651 1405 L 515 1405 L 515 1423.63" fill="none" stroke="white"
+                            stroke-miterlimit="10" pointer-events="stroke" visibility="hidden" stroke-width="9">
+                        </path>
+                        <path d="M 651 1380 L 651 1405 L 515 1405 L 515 1423.63" fill="none" stroke="rgb(0, 0, 0)"
+                            stroke-miterlimit="10" pointer-events="stroke"></path>
+                        <path d="M 515 1428.88 L 511.5 1421.88 L 515 1423.63 L 518.5 1421.88 Z" fill="rgb(0, 0, 0)"
+                            stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"></path>
+                    </g>
+                    <g style="visibility: visible;" transform="translate(0.5,0.5)">
+                        <rect x="586" y="1300" width="130" height="80" rx="12" ry="12" fill="rgb(255, 255, 255)"
+                            stroke="rgb(0, 0, 0)" pointer-events="all"></rect>
+                    </g>
+                    <g>
+                        <g>
+                            <foreignObject style="overflow: visible; text-align: left;" pointer-events="none"
+                                width="100%" height="100%">
+                                <div
+                                    style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 128px; height: 1px; padding-top: 1340px; margin-left: 587px;">
+                                    <div style="box-sizing: border-box; font-size: 0px; text-align: center;"
+                                        data-drawio-colors="color: rgb(0, 0, 0); ">
+                                        <div
+                                            style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                            Create a allow-list based on the entities in the current stack trace.
+                                        </div>
+                                    </div>
+                                </div>
+                            </foreignObject>
+                        </g>
+                    </g>
+                </g>
+                <g></g>
+                <g></g>
+            </g>
+        </svg>
+    </div>
+    <div id="modals">
+        <!-- Is your Website using third parties (e.g., advertisements, analytics, etc)? -->
+        <div class="modal fade" id="modal1" name="info-modal" tabindex="-1" aria-labelledby="modal1Label"
+            aria-hidden="true" data-text="Is your Website using third parties (e.g., advertisements, analytics, etc)?">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal1Label">Third-Party usage?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Checking if your Website is using third-party services is important to know for deploying Trusted Types as this influences a bunch of decisions. 
+                        Most importantly, as you can not change the code provided by those parties and executed in your application, it might happen that you have to use a default policy.
+                        If your third party is dynamically adding or evaluating JavaScript in HTML or via URLs, you have to use a default policy such that those invocations are also protected and will still work after Trusted types deployment. <br>
+                        If you don't have any third party or your third party is <b>not</b> adding content dynamically to your application you can continue with the "No" branch else with "Yes".
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Should all dangerous sinks be automatically protected by Trusted Types? -->
+        <div class="modal fade" id="modal2" name="info-modal" tabindex="-1" aria-labelledby="modal2Label"
+            aria-hidden="true" data-text="Should all dangerous sinks be automatically protected by Trusted Types?">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal2Label">Automatically protect XSS sinks?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        If you don't have any third party or your third party is <b>not</b> adding content dynamically to your application you can choose to create named policies. Notably, if you use name policies you have to adjust all of your code base to explicitly call the sanitizer before any dangerous API sink. In case you do not want to rework your applications code base, you can also deploy a default policy that is automatically calling the Trusted Types sanitizer every time a dangerous API is used. If you want this automatic protection continue with the "Yes" branch, else with "No".
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Deploy a CSP that enforces a named Trusted Types policy -->
+        <div class="modal fade" id="modal3" name="info-modal" tabindex="-1" aria-labelledby="modal3Label"
+            aria-hidden="true" data-text="Deploy a CSP that enforces a named Trusted Types policy">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal3Label">Deploy a named Policy:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        To deploy a named policy the first step is to add a Content-Security Policy (CSP) response header to your application that is allowing the name of your policy (e.g., tt-policy) using the <i>trusted-types</i> directive and enforces this policy for the application using <i>require-trusted-types-for</i>. For example:<br>
+                        <code>
+                            Content-Security-Policy: trusted-types tt-policy; require-trusted-types-for 'script';
+                        </code>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Deploy a CSP that enforces a Trusted Types default policy -->
+        <div class="modal fade" id="modal4" name="info-modal" tabindex="-1" aria-labelledby="modal4Label"
+            aria-hidden="true" data-text="Deploy a CSP that enforces a Trusted Types default policy">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal4Label">Deploy a default Policy:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        To deploy a default policy the first step is to add a Content-Security Policy (CSP) response header to your application that is enabling the default policy policy using the <i>trusted-types</i> directive and enforces this policy for the application using <i>require-trusted-types-for</i>. For example:<br>
+                        <code>
+                                Content-Security-Policy: trusted-types default; require-trusted-types-for 'script';
+                        </code>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Add explicit calls to the sanitizer to each dangerous sink you want to protect -->
+        <div class="modal fade" id="modal5" name="info-modal" tabindex="-1" aria-labelledby="modal5Label"
+            aria-hidden="true"
+            data-text="Add explicit calls to the sanitizer to each dangerous sink you want to protect">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal5Label">Add explicit TT calls:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        If you are encountering calls to dangerous sinks, you should first check if this dangerous call is necessary or if it can be replaced with a secure version. The following example e.g. shows how a <i>innerHTML</i> call can be replaced using the <i>createElement</i> API.
+                        <code>
+                            <pre>
+// Don't:
+element.innerHTML = '&lt;img src="profile.jpg"&gt;&lt;/img&gt;'
+
+// Do:
+const i = document.createElement('img');
+i.src = 'profile.jpg';
+element.appendChild(img);
+                            </pre>
+                        </code>
+                        In case you can not replace it, you have to change it to explicitly calling your Trusted Types policy, for example:
+                        <code>
+                            <pre>
+// Before:
+element.innerHTML = '&lt;img src="profile.jpg"&gt;&lt;/img&gt;'
+
+// After:
+element.innerHTML = tt-policy.createHTML('&lt;img src="profile.jpg"&gt;&lt;/img&gt;');
+                            </pre>
+                        </code>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Create a test Trusted Types policy in JavaScript -->
+        <div class="modal fade" id="modal6" name="info-modal" tabindex="-1" aria-labelledby="modal6Label"
+            aria-hidden="true" data-text="Create a test Trusted Types policy in JavaScript">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal6Label">Create TT Test policy:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Deploy the following script in your application (in case of named policy use the commented our
+                        line instead of the default line):<br><br>
+                        <code>
+                            <pre>
+if (window.trustedTypes && trustedTypes.createPolicy) {
+    // window.tt-policy = trustedTypes.createPolicy('tt-policy', {
+    trustedTypes.createPolicy('default', {
+        createHTML: function(string) {
+            return string;
+        },
+        createScriptURL: function(string) {
+            return string; 
+        },
+        createScript: function(string) {
+            return string;
+        }
+    });
+}
+                            </pre>
+                        </code>
+                        Notably, this code is not providing any security, as it is (so far) not sanitizing anything.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Is the application still working properly? -->
+        <div class="modal fade" id="modal7" name="info-modal" tabindex="-1" aria-labelledby="modal7Label"
+            aria-hidden="true" data-text="Is the application still working properly?">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal7Label">Functionality Check:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Given that the test policy is not sanitizing anything, it should not interfere with you applications functionality. However, there are edge cases were also this policy can cause issues (e.g. sourceless IFrame tags). Thus, you can check if with teh test policy everything works as before. Notably, you can also use this to in case of a named policy identify calls that you have missed (and fix those). 
+                        If you encounter an error that is not related to a missing sink in case of named policies, you should try the "No" branch, if everything is working that the "Yes" branch.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Is the error coming from a sourceless frame? -->
+        <div class="modal fade" id="modal8" name="info-modal" tabindex="-1" aria-labelledby="modal8Label"
+            aria-hidden="true" data-text="Is the error coming from a sourceless frame?">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal8Label">Sourceless IFrame check:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Check if the error is caused from a frame that is a Iframe without a src attribute. For security reasons those policies inherit the CSP if their parent frames (which is good). However, as your created Trusted Types is JavaScript is it not inherited, thus the iframe enforces a policy that does not exist.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hook appending sinks to inject TT in all newly added iframes -->
+        <div class="modal fade" id="modal9" name="info-modal" tabindex="-1" aria-labelledby="modal9Label"
+            aria-hidden="true" data-text="Hook appending sinks to inject TT in all newly added iframes">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal9Label">TT IFrame Hook:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        As the problem is that the JavaScript that is creating your Trusted Types sanitizers is not inherited, a possible fix is that the sanitizer adds itself automatically to all IFrames that are added programmatically by overwriting DOM appending sinks such as <i>appendChild</i>. 
+                        The following code exemplifies this process:<br><br>
+                        <code>
+    <pre>
+        let addTrustedTypes = function () {
+
+            if (trustedTypes && trustedTypes.createPolicy) {
+                window.defaultPolicy = trustedTypes.createPolicy('default', {
+                    createHTML: function(string) {
+                        return string;
+                    },
+                    createScriptURL: function(string) {
+                        return string; 
+                    },
+                    createScript: function(string) {
+                        return string;
+                    }
+                });
+            }
+        
+            function hookCall(object, functionName) {
+                try {
+                    let ogFunction = object[functionName];
+                    object[functionName] = function () {
+                        let el = ogFunction.apply(this, arguments);
+                        if (el.tagName && el.tagName.toLowerCase() === "iframe" && el.contentWindow) {
+                            try {
+                                let trusted = window.defaultPolicy.createScript(window.selfTT);
+                                el.contentWindow.eval(trusted);
+                            } catch (e) {
+                                console.log(e)
+                            }
+                        }
+                        return el;
+                    };
+                } catch (e) {
+                    console.error(e)
+                }
+            }
+        
+            hookCall(Node.prototype, 'insertBefore');
+            hookCall(Node.prototype, 'appendChild');
+        
+            window.addEventListener('securitypolicyviolation', console.error.bind(console));
+        }
+        
+        window.selfTT = `(${addTrustedTypes.toString()})();`;
+        
+        addTrustedTypes();
+    </pre>
+</code>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Are JavaScript tags or inline events added via HTML sinks? -->
+        <div class="modal fade" id="modal10" name="info-modal" tabindex="-1" aria-labelledby="modal10Label"
+            aria-hidden="true" data-text="Are JavaScript tags or inline events added via HTML sinks?">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal10Label">Dyn. inline JS?</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        The easiest way to check this is actually to continue with the "No" branch and see if the application is still behaving correctly. If not continue with the "Yes" branch.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Use the SanitizerAPI (or DOMPurify) -->
+        <div class="modal fade" id="modal11" name="info-modal" tabindex="-1" aria-labelledby="modal11Label"
+            aria-hidden="true" data-text="Use the SanitizerAPI (or DOMPurify)">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal11Label">Add HTML sanitizer:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Given that the <a href="https://wicg.github.io/sanitizer-api/" target="_blank">Web Sanitizer API</a> is still work in progress you should include a third party sanitizer such as <a href="https://github.com/cure53/DOMPurify" target="_blank">DOMPurify</a> as a fallback for browser missing support for the Web Sanitizer API. The following <i>createHTML</i> sanitizer implements this:<br><br>
+                        <code>
+                            <pre>
+if (trustedTypes && trustedTypes.createPolicy) {
+    window.defaultPolicy = trustedTypes.createPolicy('default', {
+        createHTML: function (string) {
+            if (window.Sanitizer) {
+                s = new Sanitizer();
+                return s.sanitize(string);
+            } else {
+                if (window.DOMPurify) {
+                    return DOMPurify.sanitize(string);
+                } else {
+                    return null;
+                }
+            }
+        },
+        createScriptURL: function (string) {
+            return string;
+        },
+        createScript: function (string) {
+            return string;
+        }
+    });
+}
+                            </pre>
+                        </code>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Implement a Workarround with DOMParser API that queries the JS sanitizer -->
+        <div class="modal fade" id="modal12" name="info-modal" tabindex="-1" aria-labelledby="modal12Label"
+            aria-hidden="true" data-text="Implement a Workarround with DOMParser API that queries the JS sanitizer">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal12Label">DOMParser API workaround:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Given that both the Web Sanitizer API as well as DOMPurify are removing <b>all</b> JavaScript from the input the probability that functionality is removed is high. To overcome this we can use the <a href="">DOMParser</a> API to parse the input and invoke the <i>createScript</i> sanitizer for every encounter of JavaScript. To use this API a trusted Types is required, thus we need to create a policy that is only available within this code block. Note that 'secure' also need to be added to the CSP directive! The following code is implementing this workaround:<br><br>
+                        <code>
+                            <pre>
+if (trustedTypes && trustedTypes.createPolicy) {
+    let bypass = trustedTypes.createPolicy('secure', {
+        createHTML: function (rawHTML) {
+            return rawHTML;
+        },
+        createScript: function (rawHTML) {
+            return rawHTML;
+        }
+    });
+
+    const allPossibleEvents = [];
+    for (let attr in window) {
+        if (/^on/.test(attr)) {
+            allPossibleEvents.push(attr);
+        }
+    }
+
+    window.defaultPolicy = trustedTypes.createPolicy('default', {
+        createHTML: function (rawHTML) {
+            if (DOMParser && XMLSerializer) {
+                let parser = new DOMParser();
+                let addDom = parser.parseFromString(bypass.createHTML(rawHTML), 'text/html');
+                let allNewElements = addDom.querySelectorAll('*');
+                for (let element of allNewElements) {
+                    if (element.tagName === 'script') {
+                        if (element.src) {
+                            let url = new URL(element.src);
+                            if (trustedJSSources.indexOf(url.hostname) === -1) {
+                                element.remove();
+                            }
+                        } else {
+                            if (element.innerText !== window.defaultPolicy.createScript(element.innerText)) {
+                                element.remove();
+                            }
+                        }
+                    }
+                    for (let event of allPossibleEvents) {
+                        if (typeof element[event] === 'function') {
+                            if (element[event].toString() !== window.defaultPolicy.createScript(element[event].toString())) {
+                                element.removeAttribute(event);
+                            }
+                        }
+                    }
+                }
+                return new XMLSerializer().serializeToString(addDom);
+            }
+            return null;
+        },
+        createScriptURL: function (string) {
+            return string;
+        },
+        createScript: function (string) {
+            return string;
+        }
+    });
+}
+                            </pre>
+                        </code>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Do the dyn. added script URLs contain dynamically changing parts? -->
+        <div class="modal fade" id="modal13" name="info-modal" tabindex="-1" aria-labelledby="modal13Label"
+            aria-hidden="true" data-text="Do the dyn. added script URLs contain dynamically changing parts?">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal13Label">Check for changing URLs:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        To see which JS URLs are loaded dynamically in your application you can alter your <i>createScriptURL</i> to print our its input (<code>console.log(string)</code> and observe the JS console of your browser. If you see that those are not fixed URLs but they contain changing elements e.g. a GET parameter that contains a identified or a timestamp, you should continue with "Yes" and create a allow list based on regular expressions.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Create a allow-list of allowed script URLs that can be added. -->
+        <div class="modal fade" id="modal14" name="info-modal" tabindex="-1" aria-labelledby="modal14Label"
+            aria-hidden="true" data-text="Create a allow-list of allowed script URLs that can be added.">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal14Label">URL allow-list:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        In case the URLs that are added are not changing, we can create a list of allowed URLs and check if teh added URL is contained here. Notably, this feature is to sanitize JSONP requests or open redirects, thus do always check the entire URL not only the hostname!<br><br>
+                        <code>
+                            <pre>
+if (trustedTypes && trustedTypes.createPolicy) {
+
+    cont allowedURLs = [/** URLS here **/];
+
+    window.defaultPolicy = trustedTypes.createPolicy('default', {
+        createHTML: function (string) { 
+            /** Code from before **/ 
+        },
+        createScriptURL: function (scriptUrl) {
+            if (allowedURLs.includes(scriptUrl))
+                return scriptUrl;
+            return null;
+        },
+        createScript: function (string) {
+            return string;
+        }
+    });
+}
+                            </pre>
+                        </code>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Create a RegEx-based allow-list of trusted script URLs. -->
+        <div class="modal fade" id="modal15" name="info-modal" tabindex="-1" aria-labelledby="modal15Label"
+            aria-hidden="true" data-text="Create a RegEx-based allow-list of trusted script URLs.">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal15Label">URL RegEx allow-list:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        In case of changing URL identify the changing part and create a regular expression that matched the entire URL independent of the changing part. Notably, this feature is to sanitize JSONP requests or open redirects, thus take extra care about defining the Regex in a way that is does not allow arbitrary values and do always check the entire URL not only the hostname!<br><br>
+                        <code>
+                            <pre>
+if (trustedTypes && trustedTypes.createPolicy) {
+
+    cont allowedURLRegExs = [/** RegExs here **/];
+
+    window.defaultPolicy = trustedTypes.createPolicy('default', {
+        createHTML: function (string) { 
+            /** Code from before **/ 
+        },
+        createScriptURL: function (scriptUrl) {
+            for (var re of allowedURLRegExs) {
+                if (scriptUrl.match(re))
+                    return scriptUrl;
+            }
+            return null;
+        },
+        createScript: function (string) {
+            return string;
+        }
+    });
+}
+                            </pre>
+                        </code>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Is it possible to move the part of the application that requires eval-like behavior into a cross-origin-iframe?. -->
+        <div class="modal fade" id="modal16" name="info-modal" tabindex="-1" aria-labelledby="modal16Label"
+            aria-hidden="true"
+            data-text="Is it possible to move the part of the application that requires eval-like behavior into a cross-origin-iframe?">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal16Label">X-Origin Iframe:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        In some cases it is possible to move the code that is performing string-to-code conversion into a cross-origin iframe (and thus into a separate security context). If this is possible for you can move the code into the IFrame and configure the <i>createScript</i> to just return null and thus disable all string-to-code sinks. If not you have to continue with the "No" branch. 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Can you create a regular expression that checks matches only the injected JavaScript? -->
+        <div class="modal fade" id="modal17" name="info-modal" tabindex="-1" aria-labelledby="modal17Label"
+            aria-hidden="true"
+            data-text="Can you create a regular expression that checks matches only the injected JavaScript?">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal17Label">JS RegEx allow-list:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Although this only works in case of small snippets that are are only changing a small part of the script it might be an option to use a Regular Expression based sanitizer similar to the one for <i>createScriptURL</i> in case of changing URLs.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create a allow-list based on the entities in the current stack trace. -->
+        <div class="modal fade" id="modal18" name="info-modal" tabindex="-1" aria-labelledby="modal18Label"
+            aria-hidden="true" data-text="Create a allow-list based on the entities in the current stack trace.">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modal18Label">Stacktrace allow-list:</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        In many (but not all (e.g., events)) cases you can access the call stack with checking <code>arguments.callee.caller</code> this ways we can create a list of trusted callers to only allow string-to-code conversion from trusted sources. Example code:<br><br>
+                        <code>
+                            <pre>
+if (trustedTypes && trustedTypes.createPolicy) {
+
+    cont allowedCallers = [/** Caller strings here **/];
+
+    window.defaultPolicy = trustedTypes.createPolicy('default', {
+        createHTML: function (string) { 
+            /** Code from before **/ 
+        },
+        createScriptURL: function (scriptUrl) {
+            /** Code from before **/ 
+        },
+        createScript: function (string) {
+            var caller = arguments.callee.caller.toString();
+            if (allowedCallers.includes(caller))
+                return string;
+            return null;
+        }
+    });
+}
+                            </pre>
+                        </code>
+                        Notably, this does not always work as the call stack might not be available in case of e.g., events. Also this is only a best effort approach and might be bypassable in some cases.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<br>
+<br>
+<br>
+</body>
+
+</html>

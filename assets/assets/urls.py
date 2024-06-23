@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from advertisements.views import get_random_ad, load_ad
-from menus.views import get_dishes
+from menus.views import mensa, get_dishes
 
 from django.urls import path
 
@@ -22,5 +22,6 @@ from django.urls import path
 urlpatterns = [
     path('get-dish', get_dishes),
     path('get-ad', get_random_ad),
+    path('mensa', mensa),
     path('', load_ad),
 ]
